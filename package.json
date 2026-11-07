@@ -1,0 +1,17 @@
+{
+  "name": "japar-panel",
+  "version": "3.0.0",
+  "private": true,
+  "type": "module",
+  "description": "JAPAR PANEL | Aplikasi Panel Pengelola Dapur & Resto (Jaringan Kuliner Pare)",
+  "scripts": {
+    "build": "node scripts/build-secure.mjs"
+  },
+  "devDependencies": {
+    "acorn": "^8.11.3",
+    "terser": "^5.31.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
