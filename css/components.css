@@ -1,0 +1,505 @@
+/* ==========================================================================
+   FILE: css/components.css (JAPAR PANEL v4.2 - PENGELOLA OPERASIONAL DAPUR & RESTO)
+   FUNGSI: Komponen Kartu Ringkas Mobile-First, Formulir, Saklar Proporsional,
+           Studio JSON Terpandu, & Pengatur Jam Ketik Langsung + Hari Kontras Tinggi
+   ========================================================================== */
+
+@keyframes float-gentle {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-4px); }
+}
+
+.merchant-badge-float {
+    animation: float-gentle 3.5s ease-in-out infinite;
+}
+
+/* Wadah Logo Utama Halaman Masuk (.panel-logo-box) */
+.panel-logo-box {
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.94) 100%) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+    border: 2px solid #FFFFFF !important;
+    box-shadow:
+        0 0 0 4px rgba(255, 255, 255, 0.16),
+        0 10px 24px rgba(0, 0, 0, 0.22),
+        inset 0 0 14px rgba(255, 255, 255, 1) !important;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Lapisan Pelindung Gambar (.image-protect-layer) */
+.image-protect-layer {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 10 !important;
+    background: rgba(0, 0, 0, 0.001) !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -webkit-touch-callout: none !important;
+    -webkit-user-drag: none !important;
+}
+
+/* Kartu Utama Panel (.panel-card) - Mobile-First & Proporsional */
+.panel-card {
+    background: var(--theme-card);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-card);
+    border-radius: 18px;
+    padding: 12px;
+    transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+@media (min-width: 640px) {
+    .panel-card {
+        padding: 15px;
+    }
+}
+
+/* Kotak Metrik Ringkas (.merchant-stat-box) */
+.merchant-stat-box {
+    background: var(--theme-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 6px 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: all 0.18s ease;
+    min-width: 0;
+}
+
+/* Kolom Input Formulir (.input-field) */
+.input-field {
+    width: 100%;
+    padding: 8px 11px;
+    background: var(--theme-base);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    color: var(--text-primary);
+    font-size: 0.78rem;
+    line-height: 1.35;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    outline: none;
+}
+
+.input-field::placeholder {
+    color: var(--text-muted);
+    opacity: 0.75;
+}
+
+.input-field:focus {
+    border-color: var(--theme-terracotta);
+    box-shadow: 0 0 0 3px var(--theme-gold-dim);
+}
+
+.input-field:disabled {
+    opacity: 0.68;
+    cursor: not-allowed;
+}
+
+/* Tombol Aksi Utama (.btn-primary) */
+.btn-primary {
+    background: linear-gradient(135deg, #EA580C 0%, #F97316 55%, #F59E0B 100%);
+    border: 1px solid rgba(253, 230, 138, 0.4);
+    color: #FFFFFF !important;
+    border-radius: 12px;
+    font-weight: 800;
+    padding: 9px 14px;
+    transition: transform 0.18s ease, filter 0.18s ease, box-shadow 0.18s ease;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    font-size: 0.72rem;
+    box-shadow: 0 4px 14px rgba(234, 88, 12, 0.25);
+}
+
+.btn-primary:hover {
+    filter: brightness(1.05);
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+.btn-primary:disabled {
+    opacity: 0.45;
+    pointer-events: none;
+}
+
+/* Tombol Masuk Google (.btn-google-material) */
+.btn-google-material {
+    background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+    color: #18181B !important;
+    border: 1px solid rgba(234, 88, 12, 0.35);
+    border-radius: 14px;
+    padding: 10px 16px;
+    font-weight: 700;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.14);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.btn-google-material:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px rgba(234, 88, 12, 0.2);
+}
+
+.btn-google-material:active {
+    transform: scale(0.98);
+}
+
+/* Saklar Toggle Operasional Ringkas (.bgt-toggle-label, .bgt-toggle-input, .bgt-toggle-track) */
+.bgt-toggle-label {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.bgt-toggle-input {
+    display: none;
+}
+
+.bgt-toggle-track {
+    width: 38px;
+    height: 21px;
+    background-color: #2E323B;
+    border-radius: 9999px;
+    position: relative;
+    transition: background-color 0.22s ease, border-color 0.22s ease;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    flex-shrink: 0;
+}
+
+html[data-theme="light"] .bgt-toggle-track {
+    background-color: #CBD5E1;
+    border-color: rgba(15, 23, 42, 0.18);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.bgt-toggle-track::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 15px;
+    height: 15px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    transition: transform 0.22s cubic-bezier(0.4, 0.0, 0.2, 1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.bgt-toggle-input:checked + .bgt-toggle-track {
+    background-color: #10B981 !important;
+    border-color: #059669 !important;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.18), 0 0 10px rgba(16, 185, 129, 0.32) !important;
+}
+
+.bgt-toggle-input:checked + .bgt-toggle-track::after {
+    transform: translateX(17px);
+}
+
+/* Banner Notifikasi Anti-Terpotong (#panel-notice-banner) */
+#panel-notice-banner {
+    will-change: transform, opacity;
+}
+
+#panel-notice-card {
+    background-color: rgba(26, 28, 32, 0.97);
+    color: #F4F4F5;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.42);
+}
+
+html[data-theme="light"] #panel-notice-card {
+    background-color: rgba(255, 255, 255, 0.98);
+    color: #0F172A;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.14);
+}
+
+#panel-notice-msg {
+    white-space: normal !important;
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+    line-height: 1.4 !important;
+    margin: 0;
+}
+
+/* Kartu Item Hidangan Proporsional di HP (.dish-item-card) */
+.dish-item-card {
+    background-color: var(--theme-base);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 10px;
+    transition: border-color 0.2s ease, transform 0.15s ease, background-color 0.2s ease;
+}
+
+.dish-item-card:hover {
+    border-color: rgba(234, 88, 12, 0.32);
+}
+
+.line-clamp-2,
+.line-clamp-2-title {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    word-break: break-word;
+}
+
+/* ==========================================================================
+   PENGATUR JAM KETIK LANGSUNG & HARI OPERASIONAL KONTRAS TINGGI (#japar-luxury-time-modal)
+   ========================================================================== */
+.luxury-time-trigger-card {
+    background: linear-gradient(145deg, rgba(26, 28, 32, 0.95) 0%, rgba(18, 19, 22, 0.98) 100%);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    border-radius: 14px;
+    padding: 10px 12px;
+    cursor: pointer;
+    transition: all 0.18s ease;
+}
+
+html[data-theme="light"] .luxury-time-trigger-card {
+    background: linear-gradient(145deg, #FFFFFF 0%, #F8FAFC 100%);
+    border-color: rgba(234, 88, 12, 0.38);
+}
+
+.luxury-time-trigger-card:hover,
+.luxury-time-trigger-card:active {
+    border-color: #F59E0B;
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.14);
+}
+
+/* Kotak Input Jam Ketik Teks Sendiri (Hemat Ruang & Presisi) */
+.schedule-time-input-box {
+    width: 100%;
+    text-align: center;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    padding: 8px 8px;
+    border-radius: 12px;
+    background: var(--theme-base);
+    color: var(--text-primary);
+    border: 1.5px solid rgba(245, 158, 11, 0.4);
+    outline: none;
+    transition: all 0.18s ease;
+}
+
+html[data-theme="light"] .schedule-time-input-box {
+    background: #FFFFFF;
+    color: #0F172A;
+    border-color: rgba(234, 88, 12, 0.45);
+}
+
+.schedule-time-input-box:focus {
+    border-color: #10B981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.22);
+}
+
+/* TOMBOL PILIHAN HARI MINGGUAN (.luxury-day-chip):
+   PERBEDAAN SANGAT JELAS ANTARA BELUM DIPILIH (LIBUR) DAN SUDAH DIPILIH (✓ BUKA) */
+.luxury-day-chip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    padding: 7px 2px;
+    border-radius: 11px;
+    font-size: 0.66rem;
+    font-weight: 800;
+    text-align: center;
+    border: 1.5px dashed rgba(161, 161, 170, 0.35);
+    background: rgba(18, 19, 22, 0.65);
+    color: #71717A !important;
+    cursor: pointer;
+    transition: all 0.16s ease;
+    position: relative;
+    user-select: none;
+}
+
+.luxury-day-chip .day-chip-status {
+    font-size: 0.44rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 1px 4px;
+    border-radius: 4px;
+    background: rgba(239, 68, 68, 0.14);
+    color: #F87171 !important;
+    line-height: 1.2;
+}
+
+html[data-theme="light"] .luxury-day-chip {
+    background: #E2E8F0 !important;
+    border: 1.5px dashed #94A3B8 !important;
+    color: #64748B !important;
+}
+
+html[data-theme="light"] .luxury-day-chip .day-chip-status {
+    background: rgba(220, 38, 38, 0.12) !important;
+    color: #DC2626 !important;
+}
+
+/* Saat Hari DIPILIH (BUKA): Warna Hijau Emerald Solid Pekat + Teks Putih + Badge ✓ BUKA */
+.luxury-day-chip.active,
+.luxury-day-chip.active-day {
+    background: linear-gradient(135deg, #059669 0%, #10B981 100%) !important;
+    border: 1.5px solid #6EE7B7 !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35) !important;
+    transform: translateY(-1px);
+}
+
+.luxury-day-chip.active .day-chip-status,
+.luxury-day-chip.active-day .day-chip-status {
+    background: rgba(0, 0, 0, 0.24) !important;
+    color: #ECFDF5 !important;
+}
+
+html[data-theme="light"] .luxury-day-chip.active,
+html[data-theme="light"] .luxury-day-chip.active-day {
+    background: linear-gradient(135deg, #047857 0%, #059669 100%) !important;
+    border: 1.5px solid #047857 !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3) !important;
+}
+
+html[data-theme="light"] .luxury-day-chip.active .day-chip-status,
+html[data-theme="light"] .luxury-day-chip.active-day .day-chip-status {
+    background: rgba(255, 255, 255, 0.22) !important;
+    color: #FFFFFF !important;
+}
+
+@media (max-width: 768px) {
+    .backdrop-blur-md,
+    .backdrop-blur-xl,
+    #panel-notice-card,
+    .panel-logo-box {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+    .merchant-badge-float {
+        animation: none !important;
+    }
+    .dish-item-card {
+        content-visibility: auto;
+        contain-intrinsic-size: 0 76px;
+    }
+}
+
+/* ==========================================================================
+   NAVBAR BAWAH DOCKED SOLID & STABIL (SELALU MUNCUL DI DASAR LAYAR)
+   & SISTEM GEMBOK KEAMANAN + CAPTCHA PENJUMLAHAN/ANGKA
+   ========================================================================== */
+.merchant-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background-color: #1A1C20 !important;
+    border-top: 1.5px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 -8px 28px rgba(0, 0, 0, 0.55);
+    padding: 6px 8px calc(env(safe-area-inset-bottom, 0px) + 6px) 8px;
+    max-width: 48rem;
+    margin: 0 auto;
+    transform: translateY(0) !important;
+}
+
+html[data-theme="light"] .merchant-bottom-nav {
+    background-color: #FFFFFF !important;
+    border-top: 1.5px solid rgba(15, 23, 42, 0.15) !important;
+    box-shadow: 0 -6px 24px rgba(15, 23, 42, 0.14) !important;
+}
+
+.merchant-unsaved-bar-card {
+    background-color: #1A1C20 !important;
+    border: 2px solid #F59E0B !important;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55) !important;
+}
+
+html[data-theme="light"] .merchant-unsaved-bar-card {
+    background-color: #FFFFFF !important;
+    border: 2px solid #EA580C !important;
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.18) !important;
+}
+
+#floating-unsaved-bar {
+    transition: bottom 0.26s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Wadah Penguncian Keamanan Alamat & Titik Lokasi (.security-vault-box) */
+.security-vault-box {
+    position: relative;
+    border: 1.5px solid rgba(245, 158, 11, 0.38);
+    border-radius: 18px;
+    background: var(--theme-base);
+    padding: 12px;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.security-vault-box.is-vault-unlocked {
+    border-color: rgba(16, 185, 129, 0.55);
+}
+
+.security-vault-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 9px 11px;
+    border-radius: 13px;
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.security-vault-box.is-vault-unlocked .security-vault-header {
+    background: rgba(16, 185, 129, 0.12);
+    border-color: rgba(16, 185, 129, 0.4);
+}
+
+.security-vault-body {
+    position: relative;
+    transition: opacity 0.2s ease;
+}
+
+.security-vault-box.is-vault-locked .security-vault-body {
+    opacity: 0.58;
+    pointer-events: none !important;
+    user-select: none !important;
+}
+
+.security-vault-lock-btn {
+    padding: 6px 11px;
+    border-radius: 10px;
+    font-size: 0.64rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: linear-gradient(135deg, #EA580C 0%, #F59E0B 100%);
+    color: #FFFFFF !important;
+    border: 1px solid rgba(253, 230, 138, 0.45);
+    box-shadow: 0 3px 10px rgba(234, 88, 12, 0.25);
+    flex-shrink: 0;
+}
+
+.security-vault-box.is-vault-unlocked .security-vault-lock-btn {
+    background: linear-gradient(135deg, #059669 0%, #10B981 100%);
+    border-color: rgba(167, 243, 208, 0.45);
+    box-shadow: 0 3px 10px rgba(16, 185, 129, 0.25);
+}

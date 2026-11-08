@@ -1,0 +1,283 @@
+/* ==========================================================================
+   FILE: css/style.css (JAPAR PANEL v4.2 - PENGELOLA OPERASIONAL DAPUR & RESTO)
+   DESAIN: COMPACT CULINARY ELEGANCE (MODE OTOMATIS JAM LOKAL / SIANG / MALAM)
+   PERBAIKAN: Kontras Teks Presisi Tinggi Anti-Distorsi di Mode Siang & Malam
+   ========================================================================== */
+
+:root,
+html[data-theme="dark"] {
+    color-scheme: dark;
+    --theme-base: #121316;
+    --theme-surface: #1A1C20;
+    --theme-card: rgba(26, 28, 32, 0.96);
+    --theme-elevated: #22252B;
+    --theme-gold: #F59E0B;
+    --theme-terracotta: #EA580C;
+    --theme-gold-dim: rgba(234, 88, 12, 0.18);
+    --border-color: rgba(255, 255, 255, 0.11);
+    --border-strong: rgba(234, 88, 12, 0.38);
+    --text-primary: #F4F4F5;
+    --text-secondary: #D4D4D8;
+    --text-muted: #A1A1AA;
+    --shadow-card: 0 10px 28px rgba(0, 0, 0, 0.32);
+}
+
+html[data-theme="light"] {
+    color-scheme: light;
+    --theme-base: #F1F5F9;
+    --theme-surface: #FFFFFF;
+    --theme-card: rgba(255, 255, 255, 0.98);
+    --theme-elevated: #E2E8F0;
+    --theme-gold: #D97706;
+    --theme-terracotta: #EA580C;
+    --theme-gold-dim: rgba(234, 88, 12, 0.14);
+    --border-color: rgba(15, 23, 42, 0.14);
+    --border-strong: rgba(234, 88, 12, 0.42);
+    --text-primary: #0F172A;
+    --text-secondary: #334155;
+    --text-muted: #475569;
+    --shadow-card: 0 6px 20px rgba(15, 23, 42, 0.07);
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--theme-base);
+    color: var(--text-primary);
+    transition: background-color 0.22s ease, color 0.22s ease;
+}
+
+.font-display {
+    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+}
+
+.hidden-state {
+    display: none !important;
+}
+
+.bg-theme-base {
+    background-color: var(--theme-base);
+}
+
+.bg-theme-surface {
+    background-color: var(--theme-surface);
+}
+
+.bg-theme-gold {
+    background-color: var(--theme-gold);
+}
+
+.text-theme-gold {
+    color: var(--theme-gold);
+}
+
+.border-theme-gold {
+    border-color: var(--theme-gold);
+}
+
+/* Latar Utama Panel Pengelola (Mode Malam & Mode Siang) */
+.merchant-panel-bg {
+    background:
+        radial-gradient(circle at 12% 10%, rgba(234, 88, 12, 0.11) 0%, transparent 42%),
+        radial-gradient(circle at 88% 85%, rgba(245, 158, 11, 0.08) 0%, transparent 42%),
+        linear-gradient(180deg, #121316 0%, #16181D 100%);
+    color: var(--text-primary);
+}
+
+html[data-theme="light"] .merchant-panel-bg {
+    background:
+        radial-gradient(circle at 12% 10%, rgba(234, 88, 12, 0.06) 0%, transparent 42%),
+        radial-gradient(circle at 88% 85%, rgba(245, 158, 11, 0.05) 0%, transparent 42%),
+        linear-gradient(180deg, #F8FAFC 0%, #EEF2F6 100%) !important;
+    color: #0F172A !important;
+}
+
+/* ==========================================================================
+   SISTEM KONTRAS CERDAS MODE SIANG (ANTI-DISTORSI TEKS & BACKGROUND)
+   ========================================================================== */
+html[data-theme="light"] .bg-\[\#1A1C20\],
+html[data-theme="light"] .bg-\[\#1A1C20\]\/95,
+html[data-theme="light"] .bg-\[\#1A1C20\]\/98,
+html[data-theme="light"] .bg-\[\#1F1714\],
+html[data-theme="light"] .bg-\[\#1F1714\]\/95 {
+    background-color: #FFFFFF !important;
+}
+
+html[data-theme="light"] .bg-\[\#121316\],
+html[data-theme="light"] .bg-\[\#121316\]\/60,
+html[data-theme="light"] .bg-\[\#140F0D\] {
+    background-color: #F1F5F9 !important;
+}
+
+html[data-theme="light"] .bg-white\/5,
+html[data-theme="light"] .bg-white\/10 {
+    background-color: rgba(15, 23, 42, 0.06) !important;
+}
+
+/* Teks putih pada kartu normal berubah menjadi gelap tajam di Mode Siang */
+html[data-theme="light"] .text-white,
+html[data-theme="light"] .text-\[\#F4F4F5\] {
+    color: #0F172A !important;
+}
+
+/* PROTEKSI TOMBOL & BADGE BERLATAR SOLID: Teks wajib tetap putih murni di Mode Siang */
+html[data-theme="light"] .btn-primary,
+html[data-theme="light"] .bg-orange-600,
+html[data-theme="light"] .bg-emerald-600,
+html[data-theme="light"] .bg-red-600,
+html[data-theme="light"] .from-orange-600,
+html[data-theme="light"] .luxury-day-chip.active,
+html[data-theme="light"] .luxury-day-chip.active-day,
+html[data-theme="light"] .luxury-hour-cell.active,
+html[data-theme="light"] .luxury-hour-cell.selected-hour,
+html[data-theme="light"] .luxury-min-cell.selected-min,
+html[data-theme="light"] .security-vault-lock-btn {
+    color: #FFFFFF !important;
+}
+
+html[data-theme="light"] .btn-primary *,
+html[data-theme="light"] .bg-orange-600 *,
+html[data-theme="light"] .bg-emerald-600 *,
+html[data-theme="light"] .bg-red-600 *,
+html[data-theme="light"] .from-orange-600 *,
+html[data-theme="light"] .luxury-day-chip.active *,
+html[data-theme="light"] .luxury-day-chip.active-day * {
+    color: #FFFFFF !important;
+}
+
+/* Proteksi overlay gelap di atas gambar thumbnail */
+html[data-theme="light"] .bg-black\/75,
+html[data-theme="light"] .bg-black\/80,
+html[data-theme="light"] .bg-red-950\/80 {
+    color: #FFFFFF !important;
+}
+
+html[data-theme="light"] .text-stone-100,
+html[data-theme="light"] .text-stone-200,
+html[data-theme="light"] .text-stone-300,
+html[data-theme="light"] .text-slate-200,
+html[data-theme="light"] .text-slate-300 {
+    color: #1E293B !important;
+}
+
+html[data-theme="light"] .text-stone-400,
+html[data-theme="light"] .text-stone-500,
+html[data-theme="light"] .text-slate-400 {
+    color: #475569 !important;
+}
+
+html[data-theme="light"] .text-amber-200,
+html[data-theme="light"] .text-amber-300,
+html[data-theme="light"] .text-amber-400 {
+    color: #B45309 !important;
+}
+
+html[data-theme="light"] .text-orange-200,
+html[data-theme="light"] .text-orange-300,
+html[data-theme="light"] .text-orange-400 {
+    color: #C2410C !important;
+}
+
+html[data-theme="light"] .text-emerald-200,
+html[data-theme="light"] .text-emerald-300,
+html[data-theme="light"] .text-emerald-400 {
+    color: #047857 !important;
+}
+
+html[data-theme="light"] .text-red-200,
+html[data-theme="light"] .text-red-300,
+html[data-theme="light"] .text-red-400 {
+    color: #B91C1C !important;
+}
+
+html[data-theme="light"] .text-blue-300,
+html[data-theme="light"] .text-blue-400 {
+    color: #1D4ED8 !important;
+}
+
+/* Latar transparan badge di Mode Siang diperkuat agar kontras dan tidak pudar */
+html[data-theme="light"] .bg-emerald-500\/10,
+html[data-theme="light"] .bg-emerald-500\/15,
+html[data-theme="light"] .bg-emerald-500\/20 {
+    background-color: rgba(16, 185, 129, 0.16) !important;
+    border-color: rgba(5, 150, 105, 0.42) !important;
+}
+
+html[data-theme="light"] .bg-amber-500\/10,
+html[data-theme="light"] .bg-amber-500\/15,
+html[data-theme="light"] .bg-amber-500\/20 {
+    background-color: rgba(245, 158, 11, 0.16) !important;
+    border-color: rgba(217, 119, 6, 0.42) !important;
+}
+
+html[data-theme="light"] .bg-orange-500\/10,
+html[data-theme="light"] .bg-orange-500\/15,
+html[data-theme="light"] .bg-orange-500\/20 {
+    background-color: rgba(234, 88, 12, 0.15) !important;
+    border-color: rgba(194, 65, 12, 0.42) !important;
+}
+
+html[data-theme="light"] .bg-red-500\/10,
+html[data-theme="light"] .bg-red-500\/15,
+html[data-theme="light"] .bg-red-950\/60 {
+    background-color: rgba(239, 68, 68, 0.14) !important;
+    border-color: rgba(220, 38, 38, 0.42) !important;
+}
+
+html[data-theme="light"] .border-white\/10,
+html[data-theme="light"] .border-white\/15 {
+    border-color: rgba(15, 23, 42, 0.14) !important;
+}
+
+html[data-theme="light"] select.input-field option {
+    background-color: #FFFFFF;
+    color: #0F172A;
+}
+
+html[data-theme="dark"] select.input-field option {
+    background-color: #1A1C20;
+    color: #F4F4F5;
+}
+
+/* Scrollbar Halus & Rapi */
+.merchant-scroll::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+.merchant-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.merchant-scroll::-webkit-scrollbar-thumb {
+    background: rgba(234, 88, 12, 0.32);
+    border-radius: 9999px;
+}
+
+.merchant-scroll::-webkit-scrollbar-thumb:hover {
+    background: rgba(234, 88, 12, 0.55);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input, textarea, select {
+    user-select: text !important;
+    -webkit-user-select: text !important;
+}
